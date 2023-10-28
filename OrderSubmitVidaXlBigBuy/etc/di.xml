@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<!--Get the products For Both-->
+    <type name="RltSquare\OrderSubmitVidaXlBigBuy\Action\GetOrderExportItems">
+        <arguments>
+            <argument name="allowedTypes" xsi:type="array">
+                <item name="simple" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_SIMPLE</item>
+                <item name="virtual" xsi:type="const">Magento\Catalog\Model\Product\Type::TYPE_VIRTUAL</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--Big Buy Sensitive Data-->
+    <type name="Magento\Config\Model\Config\TypePool">
+        <arguments>
+            <argument name="sensitive" xsi:type="array">
+                <item name="sales/order_export/api_token" xsi:type="string">1</item>
+            </argument>
+            <argument name="environment" xsi:type="array">
+                <item name="sales/order_export/api_url" xsi:type="string">1</item>
+            </argument>
+        </arguments>
+    </type>
+    <!--VidaXl Sensitive Data-->
+    <type name="Magento\Config\Model\Config\TypePool">
+        <arguments>
+            <argument name="sensitive" xsi:type="array">
+                <item name="sales/vida_xl_order_export/api_token" xsi:type="string">1</item>
+            </argument>
+            <argument name="environment" xsi:type="array">
+                <item name="sales/vida_xl_order_export/api_url" xsi:type="string">1</item>
+            </argument>
+        </arguments>
+    </type>
+<!--Custom Logger File For Order-->
+    <type name="RltSquare\OrderSubmitVidaXlBigBuy\Logger\Handler">
+        <arguments>
+            <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+        </arguments>
+    </type>
+    <type name="RltSquare\OrderSubmitVidaXlBigBuy\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">bigBuyVidaXlOrder</argument>
+            <argument name="handlers" xsi:type="array">
+                <item name="system" xsi:type="object">RltSquare\OrderSubmitVidaXlBigBuy\Logger\Handler</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Magento\Sales\Model\ResourceModel\Order\Grid">
+        <arguments>
+            <argument name="columns" xsi:type="array">
+                <item name="big_buy_order_id" xsi:type="string">sales_order.big_buy_order_id</item>
+                <item name="vidaXl_order_id" xsi:type="string">sales_order.vidaXl_order_id</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+</config>

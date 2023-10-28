@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <!-- Add column to BIG Buy "sales_order_grid" -->
+    <table name="sales_order_grid">
+        <column xsi:type="int" name="big_buy_order_id" unsigned="true" nullable="false"
+                comment="BigBuy Order Id"/>
+        <!--        VidaXl-->
+        <column xsi:type="int" name="vidaXl_order_id" unsigned="true" nullable="false"
+                comment=" VidaXl Order Id"/>
+    </table>
+    <!-- Add column to Big Buy "sales_order" -->
+    <table name="sales_order">
+        <column xsi:type="int" name="big_buy_order_id" unsigned="true" nullable="false"
+                comment="BigBuy Order Id"/>
+<!--        VidaXl-->
+        <column xsi:type="int" name="vidaXl_order_id" unsigned="true" nullable="false"
+                comment="VidaXl Order Id"/>
+    </table>
+</schema>

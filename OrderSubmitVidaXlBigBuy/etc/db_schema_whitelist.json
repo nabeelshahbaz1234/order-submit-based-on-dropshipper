@@ -1,0 +1,14 @@
+{
+    "sales_order_grid": {
+        "column": {
+            "big_buy_order_id": true,
+            "vidaXl_order_id": true
+        }
+    },
+    "sales_order": {
+        "column": {
+            "big_buy_order_id": true,
+            "vidaXl_order_id": true
+        }
+    }
+}

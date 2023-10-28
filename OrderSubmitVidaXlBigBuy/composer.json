@@ -1,0 +1,21 @@
+{
+  "name": "rlt-square/module-order-submit-vida-xl-big-buy",
+  "version": "1.0.0",
+  "description": "Create Order Id For BigBuy and VidaXl",
+  "type": "magento2-module",
+  "require": {
+    "magento/framework": "*",
+    "magento/module-sales": "103.0.*"
+  },
+  "license": [
+    "Proprietary"
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "RltSquare\\OrderSubmitVidaXlBigBuy\\": ""
+    }
+  }
+}

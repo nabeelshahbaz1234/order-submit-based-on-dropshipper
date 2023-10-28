@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <columns name="sales_order_columns">
+        <column name="big_buy_order_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">Big Buy Order Id</label>
+                <visible>true</visible>
+            </settings>
+        </column>
+        <column name="vidaXl_order_id">
+            <settings>
+                <filter>text</filter>
+                <label translate="true">VidaXL Order Id</label>
+                <visible>true</visible>
+            </settings>
+        </column>
+    </columns>
+</listing>
